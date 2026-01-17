@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Birthday Flip Book</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#000;
+  font-family:Arial;
+}
+
+.book{
+  width:260px;
+  height:360px;
+  position:relative;
+  perspective:1200px;
+}
+
+.page{
+  width:100%;
+  height:100%;
+  position:absolute;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+  transform-origin:left;
+  transition:1s;
+  padding:20px;
+  box-sizing:border-box;
+  backface-visibility:hidden;
+}
+
+.page img{
+  width:100%;
+  height:60%;
+  object-fit:cover;
+  border-radius:10px;
+
+}
+
+h2,p{ text-align:center; }
+
+input{ display:none; }
+
+/* PAGE STACK ORDER */
+.page1{ z-index:7; }
+.page2{ z-index:6; }
+.page3{ z-index:5; }
+.page4{ z-index:4; }
+.page5{ z-index:3; }
+.page6{ z-index:2; }
+.page7{ z-index:1; }
+
+/* FLIP ACTION */
+#c1:checked ~ .book .page1{ transform:rotateY(-180deg); }
+#c2:checked ~ .book .page2{ transform:rotateY(-180deg); }
+#c3:checked ~ .book .page3{ transform:rotateY(-180deg); }
+#c4:checked ~ .book .page4{ transform:rotateY(-180deg); }
+#c5:checked ~ .book .page5{ transform:rotateY(-180deg); }
+#c6:checked ~ .book .page6{ transform:rotateY(-180deg); }
+
+/* BUTTON */
+label{
+  position:absolute;
+  bottom:12px;
+  right:12px;
+  background:#ff4081;
+  color:white;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:10px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<input type="checkbox" id="c1">
+<input type="checkbox" id="c2">
+<input type="checkbox" id="c3">
+<input type="checkbox" id="c4">
+<input type="checkbox" id="c5">
+<input type="checkbox" id="c6">
+
+<div class="book">
+
+<div class="page page1">
+<img src="photo.jpg">
+  <h2> HAPPY BIRTHDAY </h2>
+  <p>another version just for you</p>
+  <p>click on it <
+  <label for="c1">Next </label>
+</div>
+
+<div class="page page2">
+  <img src="photo1.jpg">
+  <p><span style="color:#FF69B4;">Hi babe</span>
+wish I could meet you irl and wish you happy birthday but for now this is all I could to wish you through this </p>
+  <label for="c2">Next </label>
+</div>
+
+<div class="page page3">
+  <img src="photo2.jpg">
+  <p> <span style="color:#FF4D6D;">I wanna tell you how much I love you</span> <span style="color:#FF8FAB;">and how much I miss you when we are not talking,</span> <span style="color:#C77DFF;">all I want to do is keep talking to you forever.</span><br><br><span style="color:#5FA8D3;">I hope this never ends,</span> <span style="color:#74C69D;">and someday we will see each other,</span> <span style="color:#F72585;">I promise </span></p>
+  <label for="c3">Next </label>
+</div>
+
+<div class="page page4">
+  <img src="photo3.jpg">
+  <p><span style="color:#F4A6B8;">you are really important</span> 
+<span style="color:#F7C1CC;">and special to me,</span><br>
+
+<span style="color:#D6CDEA;">no word can explain</span> 
+<span style="color:#F2B5D4;">how much I love you </span>, </p>
+  <label for="c4">Next </label>
+</div>
+
+<div class="page page5">
+  <img src="photo4.jpg">
+  <p><span style="color:#F6B6C9;">You have this smile </span><br>
+<span style="color:#F2C6D8;">That messes with my heart </span><br>
+<span style="color:#DCCEF2;">And this laugh</span><br>
+<span style="color:#F4B8D2;">That I secretly replay in my head </span></p>
+  <label for="c5">Next </label>
+</div>
+
+<div class="page page6">
+  <img src="photo5.jpg">
+  <p>today is a day special because it’s all about YOU. I don’t know how I got so lucky to have a girl as amazing, funny, and ridiculously cute as you.  You deserve the world, babe, and I’ll do my best to give it to you starting with all my hugs and kisses today "</p>
+  <label for="c6">Next </label>
+</div>
+
+<div class="page page7">
+  <h2> HAPPY BIRTHDAY </h2>
+  <h2><span style="color:#F6B6C9;">So once again,</span><br>
+<span style="color:#F2C6D8;">happy birthday, my love </span><br>
+<span style="color:#DCCEF2;">stay smiling, stay you,</span><br>
+<span style="color:#F4B8D2;">I’m always with you </span></h2>
+</div>
+
+</div>
+</body>
+</html>
